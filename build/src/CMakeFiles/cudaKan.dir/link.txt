@@ -1,0 +1,1 @@
+/usr/bin/g++-14 -fPIC -shared -Wl,-soname,libcudaKan.so -o libcudaKan.so CMakeFiles/cudaKan.dir/layers/kan_layer.cpp.o 

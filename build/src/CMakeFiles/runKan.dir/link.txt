@@ -1,0 +1,1 @@
+/usr/bin/g++-14 CMakeFiles/runKan.dir/main.cpp.o -o runKan  -Wl,-rpath,/home/sebas/Desktop/ie_dev/cuKan/build/src libcudaKan.so 

@@ -1,0 +1,5 @@
+if(EXISTS "/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid[1]_tests.cmake")
+  include("/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid[1]_tests.cmake")
+else()
+  add_test(test_grid_NOT_BUILT test_grid_NOT_BUILT)
+endif()
