@@ -1,0 +1,30 @@
+Start testing: May 04 00:50 CEST
+----------------------------------------------------------
+1/1 Testing: TestBuildGrid.ShapeDefault
+1/1 Test: TestBuildGrid.ShapeDefault
+Command: "/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid" "--gtest_filter=TestBuildGrid.ShapeDefault" "--gtest_also_run_disabled_tests"
+Directory: /home/sebas/Desktop/ie_dev/cuKan/build/tests
+"TestBuildGrid.ShapeDefault" start time: May 04 00:50 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TestBuildGrid.ShapeDefault
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TestBuildGrid
+[ RUN      ] TestBuildGrid.ShapeDefault
+[       OK ] TestBuildGrid.ShapeDefault (0 ms)
+[----------] 1 test from TestBuildGrid (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"TestBuildGrid.ShapeDefault" end time: May 04 00:50 CEST
+"TestBuildGrid.ShapeDefault" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 04 00:50 CEST

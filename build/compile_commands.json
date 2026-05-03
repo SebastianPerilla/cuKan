@@ -25,14 +25,26 @@
 },
 {
   "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/src",
-  "command": "/usr/bin/g++-14   -std=gnu++17 -o CMakeFiles/cuKan.dir/main.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/main.cpp",
+  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -std=gnu++17 -o CMakeFiles/cuKan.dir/main.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/main.cpp",
   "file": "/home/sebas/Desktop/ie_dev/cuKan/src/main.cpp",
   "output": "src/CMakeFiles/cuKan.dir/main.cpp.o"
 },
 {
+  "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/src",
+  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -std=gnu++17 -o CMakeFiles/cuKan.dir/grid.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp",
+  "file": "/home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp",
+  "output": "src/CMakeFiles/cuKan.dir/grid.cpp.o"
+},
+{
   "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/tests",
-  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=gnu++17 -o CMakeFiles/test_grid.dir/test_grid.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/tests/test_grid.cpp",
+  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/include -I/home/sebas/Desktop/ie_dev/cuKan/src -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=gnu++17 -o CMakeFiles/test_grid.dir/test_grid.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/tests/test_grid.cpp",
   "file": "/home/sebas/Desktop/ie_dev/cuKan/tests/test_grid.cpp",
   "output": "tests/CMakeFiles/test_grid.dir/test_grid.cpp.o"
+},
+{
+  "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/tests",
+  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/include -I/home/sebas/Desktop/ie_dev/cuKan/src -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=gnu++17 -o CMakeFiles/test_grid.dir/__/src/grid.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp",
+  "file": "/home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp",
+  "output": "tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o"
 }
 ]

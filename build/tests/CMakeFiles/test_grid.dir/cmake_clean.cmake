@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/test_grid.dir/__/src/grid.cpp.o"
+  "CMakeFiles/test_grid.dir/__/src/grid.cpp.o.d"
   "CMakeFiles/test_grid.dir/test_grid.cpp.o"
   "CMakeFiles/test_grid.dir/test_grid.cpp.o.d"
   "test_grid"

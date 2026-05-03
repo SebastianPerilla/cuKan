@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++-14
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src
 
 CXX_FLAGS = -std=gnu++17
 

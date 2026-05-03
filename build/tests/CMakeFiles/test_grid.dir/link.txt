@@ -1,1 +1,1 @@
-/usr/bin/g++-14 CMakeFiles/test_grid.dir/test_grid.cpp.o -o test_grid  ../lib/libgtest_main.a -lcudaKan ../lib/libgtest.a 
+/usr/bin/g++-14 CMakeFiles/test_grid.dir/test_grid.cpp.o CMakeFiles/test_grid.dir/__/src/grid.cpp.o -o test_grid  ../lib/libgtest_main.a ../lib/libgtest.a 

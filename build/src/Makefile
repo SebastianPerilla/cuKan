@@ -185,6 +185,30 @@ cuKan/fast:
 	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/build
 .PHONY : cuKan/fast
 
+grid.o: grid.cpp.o
+.PHONY : grid.o
+
+# target to build an object file
+grid.cpp.o:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/grid.cpp.o
+.PHONY : grid.cpp.o
+
+grid.i: grid.cpp.i
+.PHONY : grid.i
+
+# target to preprocess a source file
+grid.cpp.i:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/grid.cpp.i
+.PHONY : grid.cpp.i
+
+grid.s: grid.cpp.s
+.PHONY : grid.s
+
+# target to generate assembly for a file
+grid.cpp.s:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/grid.cpp.s
+.PHONY : grid.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -223,6 +247,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... cuKan"
+	@echo "... grid.o"
+	@echo "... grid.i"
+	@echo "... grid.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

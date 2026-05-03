@@ -185,6 +185,30 @@ test_grid/fast:
 	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/build
 .PHONY : test_grid/fast
 
+__/src/grid.o: __/src/grid.cpp.o
+.PHONY : __/src/grid.o
+
+# target to build an object file
+__/src/grid.cpp.o:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o
+.PHONY : __/src/grid.cpp.o
+
+__/src/grid.i: __/src/grid.cpp.i
+.PHONY : __/src/grid.i
+
+# target to preprocess a source file
+__/src/grid.cpp.i:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.i
+.PHONY : __/src/grid.cpp.i
+
+__/src/grid.s: __/src/grid.cpp.s
+.PHONY : __/src/grid.s
+
+# target to generate assembly for a file
+__/src/grid.cpp.s:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_grid.dir/build.make tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.s
+.PHONY : __/src/grid.cpp.s
+
 test_grid.o: test_grid.cpp.o
 .PHONY : test_grid.o
 
@@ -223,6 +247,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... test_grid"
+	@echo "... __/src/grid.o"
+	@echo "... __/src/grid.i"
+	@echo "... __/src/grid.s"
 	@echo "... test_grid.o"
 	@echo "... test_grid.i"
 	@echo "... test_grid.s"

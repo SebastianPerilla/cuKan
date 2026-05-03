@@ -11,10 +11,10 @@ FetchContent_MakeAvailable(googletest)
 
 include(GoogleTest)
 
-add_executable(test_grid test_grid.cpp)
+add_executable(test_grid test_grid.cpp ${CMAKE_SOURCE_DIR}/src/grid.cpp)
 
-target_link_libraries(test_grid PRIVATE GTest::gtest_main cudaKan)
+target_link_libraries(test_grid PRIVATE GTest::gtest_main Eigen3::Eigen)
+target_include_directories(test_grid PRIVATE ${CMAKE_SOURCE_DIR}/include
+                                             ${CMAKE_SOURCE_DIR}/src)
 
-target_include_directories(test_grid PRIVATE ${CMAKE_SOURCE_DIR}/include)
-
-gtest_discover_tests(test_grid) # 👈 correct target
+gtest_discover_tests(test_grid)

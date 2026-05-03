@@ -4,7 +4,7 @@
 
 // Same cubic basis matrix constants as the forward kernel.
 
-namespace g_BsplineBackwards_Constants {
+namespace g_BsplineBackward_Constants {
     constexpr long double M00 { 1.0 / 6.0 };
     constexpr long double M01 { 4.0 / 6.0 };
     constexpr long double M02 { 1.0 / 6.0 };
@@ -25,9 +25,9 @@ namespace g_BsplineBackwards_Constants {
     constexpr long double M32 { -3.0 / 6.0 };
     constexpr long double M33 { 1.0 / 6.0 };
 
-} // namespace g_BsplineBackwards_Constants
+} // namespace g_BsplineBackward_Constants
 
-namespace g_BsplineBackwards_Parameters {}
+namespace g_BsplineBackward_Parameters {}
 
 int bspline_backward_kernel(int x_ptr, int coef_ptr, double scale_base_ptr, double scale_sp_ptr, double dout_ptr,
                             double dx_ptr, double d_coef_ptr, double dscale_base_ptr, double dscale_sp_ptr, int t0,

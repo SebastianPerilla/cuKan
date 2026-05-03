@@ -83,19 +83,35 @@ tests/CMakeFiles/test_grid.dir/test_grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test_grid.dir/test_grid.cpp.s"
 	cd /home/sebas/Desktop/ie_dev/cuKan/build/tests && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sebas/Desktop/ie_dev/cuKan/tests/test_grid.cpp -o CMakeFiles/test_grid.dir/test_grid.cpp.s
 
+tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o: tests/CMakeFiles/test_grid.dir/flags.make
+tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o: /home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp
+tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o: tests/CMakeFiles/test_grid.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sebas/Desktop/ie_dev/cuKan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o"
+	cd /home/sebas/Desktop/ie_dev/cuKan/build/tests && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o -MF CMakeFiles/test_grid.dir/__/src/grid.cpp.o.d -o CMakeFiles/test_grid.dir/__/src/grid.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp
+
+tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test_grid.dir/__/src/grid.cpp.i"
+	cd /home/sebas/Desktop/ie_dev/cuKan/build/tests && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp > CMakeFiles/test_grid.dir/__/src/grid.cpp.i
+
+tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test_grid.dir/__/src/grid.cpp.s"
+	cd /home/sebas/Desktop/ie_dev/cuKan/build/tests && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp -o CMakeFiles/test_grid.dir/__/src/grid.cpp.s
+
 # Object files for target test_grid
 test_grid_OBJECTS = \
-"CMakeFiles/test_grid.dir/test_grid.cpp.o"
+"CMakeFiles/test_grid.dir/test_grid.cpp.o" \
+"CMakeFiles/test_grid.dir/__/src/grid.cpp.o"
 
 # External object files for target test_grid
 test_grid_EXTERNAL_OBJECTS =
 
 tests/test_grid: tests/CMakeFiles/test_grid.dir/test_grid.cpp.o
+tests/test_grid: tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o
 tests/test_grid: tests/CMakeFiles/test_grid.dir/build.make
 tests/test_grid: lib/libgtest_main.a
 tests/test_grid: lib/libgtest.a
 tests/test_grid: tests/CMakeFiles/test_grid.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sebas/Desktop/ie_dev/cuKan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_grid"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sebas/Desktop/ie_dev/cuKan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_grid"
 	cd /home/sebas/Desktop/ie_dev/cuKan/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_grid.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/sebas/Desktop/ie_dev/cuKan/build/tests && /usr/bin/cmake -D TEST_TARGET=test_grid -D TEST_EXECUTABLE=/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/sebas/Desktop/ie_dev/cuKan/build/tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=test_grid_TESTS -D CTEST_FILE=/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.28/Modules/GoogleTestAddTests.cmake
 

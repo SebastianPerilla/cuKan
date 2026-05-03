@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++-14
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sebas/Desktop/ie_dev/cuKan/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -I/home/sebas/Desktop/ie_dev/cuKan/include -I/home/sebas/Desktop/ie_dev/cuKan/src -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest
 
 CXX_FLAGS = -std=gnu++17
 

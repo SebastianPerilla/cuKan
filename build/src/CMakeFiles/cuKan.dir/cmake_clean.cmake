@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cuKan.dir/grid.cpp.o"
+  "CMakeFiles/cuKan.dir/grid.cpp.o.d"
   "CMakeFiles/cuKan.dir/main.cpp.o"
   "CMakeFiles/cuKan.dir/main.cpp.o.d"
   "cuKan"
