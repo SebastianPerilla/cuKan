@@ -1,7 +1,8 @@
 #include <unsupported/Eigen/CXX11/Tensor>
 #include <utility>
 
-Eigen::Tensor<float, 1> build_grid(int G, int k, std::pair<float, float> grid_range) {
+// build_grid Function (with trailing return typ)
+auto build_grid(int G, int k, std::pair<float, float> grid_range) -> Eigen::Tensor<float, 1> {
 
     auto [a, b] = grid_range;                  // Structured Bindings Added in C++17
     float h = (b - a) / static_cast<float>(G); // Cast the G into a float (better than implicit type conversion)
