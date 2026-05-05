@@ -4,4 +4,6 @@ add_test([=[TestBuildGrid.shape_various]=]  /home/sebas/Desktop/ie_dev/cuKan/bui
 set_tests_properties([=[TestBuildGrid.shape_various]=]  PROPERTIES WORKING_DIRECTORY /home/sebas/Desktop/ie_dev/cuKan/build/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
 add_test([=[TestBuildGrid.interior_knots_uniform]=]  /home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid [==[--gtest_filter=TestBuildGrid.interior_knots_uniform]==] --gtest_also_run_disabled_tests)
 set_tests_properties([=[TestBuildGrid.interior_knots_uniform]=]  PROPERTIES WORKING_DIRECTORY /home/sebas/Desktop/ie_dev/cuKan/build/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set(  test_grid_TESTS TestBuildGrid.shape_default TestBuildGrid.shape_various TestBuildGrid.interior_knots_uniform)
+add_test([=[TestBuildGrid.extension_spacing]=]  /home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid [==[--gtest_filter=TestBuildGrid.extension_spacing]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TestBuildGrid.extension_spacing]=]  PROPERTIES WORKING_DIRECTORY /home/sebas/Desktop/ie_dev/cuKan/build/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  test_grid_TESTS TestBuildGrid.shape_default TestBuildGrid.shape_various TestBuildGrid.interior_knots_uniform TestBuildGrid.extension_spacing)

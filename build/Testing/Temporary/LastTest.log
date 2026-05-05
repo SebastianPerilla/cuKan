@@ -1,10 +1,10 @@
-Start testing: May 04 14:09 CEST
+Start testing: May 05 13:28 CEST
 ----------------------------------------------------------
-1/3 Testing: TestBuildGrid.shape_default
-1/3 Test: TestBuildGrid.shape_default
+1/4 Testing: TestBuildGrid.shape_default
+1/4 Test: TestBuildGrid.shape_default
 Command: "/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid" "--gtest_filter=TestBuildGrid.shape_default" "--gtest_also_run_disabled_tests"
 Directory: /home/sebas/Desktop/ie_dev/cuKan/build/tests
-"TestBuildGrid.shape_default" start time: May 04 14:09 CEST
+"TestBuildGrid.shape_default" start time: May 05 13:28 CEST
 Output:
 ----------------------------------------------------------
 Running main() from /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -23,15 +23,15 @@ Note: Google Test filter = TestBuildGrid.shape_default
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"TestBuildGrid.shape_default" end time: May 04 14:09 CEST
+"TestBuildGrid.shape_default" end time: May 05 13:28 CEST
 "TestBuildGrid.shape_default" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/3 Testing: TestBuildGrid.shape_various
-2/3 Test: TestBuildGrid.shape_various
+2/4 Testing: TestBuildGrid.shape_various
+2/4 Test: TestBuildGrid.shape_various
 Command: "/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid" "--gtest_filter=TestBuildGrid.shape_various" "--gtest_also_run_disabled_tests"
 Directory: /home/sebas/Desktop/ie_dev/cuKan/build/tests
-"TestBuildGrid.shape_various" start time: May 04 14:09 CEST
+"TestBuildGrid.shape_various" start time: May 05 13:28 CEST
 Output:
 ----------------------------------------------------------
 Running main() from /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -50,15 +50,15 @@ Note: Google Test filter = TestBuildGrid.shape_various
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"TestBuildGrid.shape_various" end time: May 04 14:09 CEST
+"TestBuildGrid.shape_various" end time: May 05 13:28 CEST
 "TestBuildGrid.shape_various" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/3 Testing: TestBuildGrid.interior_knots_uniform
-3/3 Test: TestBuildGrid.interior_knots_uniform
+3/4 Testing: TestBuildGrid.interior_knots_uniform
+3/4 Test: TestBuildGrid.interior_knots_uniform
 Command: "/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid" "--gtest_filter=TestBuildGrid.interior_knots_uniform" "--gtest_also_run_disabled_tests"
 Directory: /home/sebas/Desktop/ie_dev/cuKan/build/tests
-"TestBuildGrid.interior_knots_uniform" start time: May 04 14:09 CEST
+"TestBuildGrid.interior_knots_uniform" start time: May 05 13:28 CEST
 Output:
 ----------------------------------------------------------
 Running main() from /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -77,8 +77,71 @@ Note: Google Test filter = TestBuildGrid.interior_knots_uniform
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"TestBuildGrid.interior_knots_uniform" end time: May 04 14:09 CEST
+"TestBuildGrid.interior_knots_uniform" end time: May 05 13:28 CEST
 "TestBuildGrid.interior_knots_uniform" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 04 14:09 CEST
+4/4 Testing: TestBuildGrid.extension_spacing
+4/4 Test: TestBuildGrid.extension_spacing
+Command: "/home/sebas/Desktop/ie_dev/cuKan/build/tests/test_grid" "--gtest_filter=TestBuildGrid.extension_spacing" "--gtest_also_run_disabled_tests"
+Directory: /home/sebas/Desktop/ie_dev/cuKan/build/tests
+"TestBuildGrid.extension_spacing" start time: May 05 13:28 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TestBuildGrid.extension_spacing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TestBuildGrid
+[ RUN      ] TestBuildGrid.extension_spacing
+
+Left Padding:
+
+Expected: -2.2
+
+Grid(i): -2.2
+
+Left Padding:
+
+Expected: -1.8
+
+Grid(i): -1.8
+
+Left Padding:
+
+Expected: -1.4
+
+Grid(i): -1.4
+
+Right Padding:
+
+Expected: 1.4
+
+IDX: 9
+
+Right Padding:
+
+Expected: 1.8
+
+IDX: 10
+
+Right Padding:
+
+Expected: 2.2
+
+IDX: 11
+[       OK ] TestBuildGrid.extension_spacing (0 ms)
+[----------] 1 test from TestBuildGrid (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TestBuildGrid.extension_spacing" end time: May 05 13:28 CEST
+"TestBuildGrid.extension_spacing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 05 13:28 CEST

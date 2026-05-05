@@ -1,7 +1,8 @@
 TestBuildGrid.ShapeDefault 2 0.00135887
 TestBuildGrid.TestShapeVarious 1 0.0019703
-TestBuildGrid.shape_default 2 0.00144134
-TestBuildGrid.shape_various 2 0.00112158
+TestBuildGrid.shape_default 6 0.000557712
+TestBuildGrid.shape_various 6 0.000483388
 TestBuildGrid.TestInteriorKnotsUniform 1 0.00221557
-TestBuildGrid.interior_knots_uniform 1 0.00218477
+TestBuildGrid.interior_knots_uniform 5 0.000400782
+TestBuildGrid.extension_spacing 4 0.000596416
 ---
