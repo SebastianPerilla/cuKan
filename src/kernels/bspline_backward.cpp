@@ -39,7 +39,7 @@ int bspline_backward_kernel(int x_ptr, int coef_ptr, double scale_base_ptr, doub
 
     pid_t pid { getpid() };
     auto b_idx = std::floor(pid / in_dim);
-    auto i_idx = pid % in_dim;
+    // auto i_idx = pid % in_dim;
 
     auto x_val = 0;
 

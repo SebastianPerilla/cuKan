@@ -8,7 +8,7 @@
 #define EIGEN_MINOR_VERSION 0
 #define EIGEN_PATCH_VERSION 1
 #define EIGEN_PRERELEASE_VERSION "dev"
-#define EIGEN_BUILD_VERSION "adfd1806"
-#define EIGEN_VERSION_STRING "5.0.1-dev+adfd1806"
+#define EIGEN_BUILD_VERSION "6efd72be"
+#define EIGEN_VERSION_STRING "5.0.1-dev+6efd72be"
 
 #endif  // EIGEN_VERSION_H
