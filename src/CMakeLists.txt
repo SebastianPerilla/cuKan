@@ -1,6 +1,5 @@
-find_package(Eigen3 REQUIRED)
+add_executable(kan_app main.cpp kernels/cuda/bspline_forward.cu)
 
-add_executable(cuKan)
-target_sources(cuKan PRIVATE main.cpp grid.cpp)
+target_include_directories(kan_app PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
-target_link_libraries(cuKan PRIVATE Eigen3::Eigen)
+set_target_properties(kan_app PROPERTIES CUDA_SEPARABLE_COMPILATION ON)

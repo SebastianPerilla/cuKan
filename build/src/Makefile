@@ -95,51 +95,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Devel\" \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sebas/Desktop/ie_dev/cuKan/build/CMakeFiles /home/sebas/Desktop/ie_dev/cuKan/build/src//CMakeFiles/progress.marks
@@ -172,49 +127,49 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/cuKan.dir/rule:
-	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cuKan.dir/rule
-.PHONY : src/CMakeFiles/cuKan.dir/rule
+src/CMakeFiles/kan_app.dir/rule:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/kan_app.dir/rule
+.PHONY : src/CMakeFiles/kan_app.dir/rule
 
 # Convenience name for target.
-cuKan: src/CMakeFiles/cuKan.dir/rule
-.PHONY : cuKan
+kan_app: src/CMakeFiles/kan_app.dir/rule
+.PHONY : kan_app
 
 # fast build rule for target.
-cuKan/fast:
-	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/build
-.PHONY : cuKan/fast
+kan_app/fast:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/kan_app.dir/build.make src/CMakeFiles/kan_app.dir/build
+.PHONY : kan_app/fast
 
-grid.o: grid.cpp.o
-.PHONY : grid.o
+kernels/cuda/bspline_forward.o: kernels/cuda/bspline_forward.cu.o
+.PHONY : kernels/cuda/bspline_forward.o
 
 # target to build an object file
-grid.cpp.o:
-	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/grid.cpp.o
-.PHONY : grid.cpp.o
+kernels/cuda/bspline_forward.cu.o:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/kan_app.dir/build.make src/CMakeFiles/kan_app.dir/kernels/cuda/bspline_forward.cu.o
+.PHONY : kernels/cuda/bspline_forward.cu.o
 
-grid.i: grid.cpp.i
-.PHONY : grid.i
+kernels/cuda/bspline_forward.i: kernels/cuda/bspline_forward.cu.i
+.PHONY : kernels/cuda/bspline_forward.i
 
 # target to preprocess a source file
-grid.cpp.i:
-	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/grid.cpp.i
-.PHONY : grid.cpp.i
+kernels/cuda/bspline_forward.cu.i:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/kan_app.dir/build.make src/CMakeFiles/kan_app.dir/kernels/cuda/bspline_forward.cu.i
+.PHONY : kernels/cuda/bspline_forward.cu.i
 
-grid.s: grid.cpp.s
-.PHONY : grid.s
+kernels/cuda/bspline_forward.s: kernels/cuda/bspline_forward.cu.s
+.PHONY : kernels/cuda/bspline_forward.s
 
 # target to generate assembly for a file
-grid.cpp.s:
-	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/grid.cpp.s
-.PHONY : grid.cpp.s
+kernels/cuda/bspline_forward.cu.s:
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/kan_app.dir/build.make src/CMakeFiles/kan_app.dir/kernels/cuda/bspline_forward.cu.s
+.PHONY : kernels/cuda/bspline_forward.cu.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/main.cpp.o
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/kan_app.dir/build.make src/CMakeFiles/kan_app.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -222,7 +177,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/main.cpp.i
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/kan_app.dir/build.make src/CMakeFiles/kan_app.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -230,7 +185,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cuKan.dir/build.make src/CMakeFiles/cuKan.dir/main.cpp.s
+	cd /home/sebas/Desktop/ie_dev/cuKan/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/kan_app.dir/build.make src/CMakeFiles/kan_app.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -240,16 +195,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... cuKan"
-	@echo "... grid.o"
-	@echo "... grid.i"
-	@echo "... grid.s"
+	@echo "... kan_app"
+	@echo "... kernels/cuda/bspline_forward.o"
+	@echo "... kernels/cuda/bspline_forward.i"
+	@echo "... kernels/cuda/bspline_forward.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

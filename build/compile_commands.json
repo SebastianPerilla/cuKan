@@ -1,50 +1,14 @@
 [
 {
-  "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googlemock/include -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googlemock -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
-  "file": "/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
-  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-},
-{
-  "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/g++-14  -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googlemock/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googlemock -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
-  "file": "/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
-  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
-},
-{
-  "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-build/googletest",
-  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest-all.cc",
-  "file": "/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest-all.cc",
-  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-},
-{
-  "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-build/googletest",
-  "command": "/usr/bin/g++-14  -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest_main.cc",
-  "file": "/home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/src/gtest_main.cc",
-  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-},
-{
   "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/src",
-  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -std=gnu++17 -o CMakeFiles/cuKan.dir/main.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/main.cpp",
+  "command": "/usr/bin/c++  -I/home/sebas/Desktop/ie_dev/cuKan/include -std=gnu++20 -o CMakeFiles/kan_app.dir/main.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/main.cpp",
   "file": "/home/sebas/Desktop/ie_dev/cuKan/src/main.cpp",
-  "output": "src/CMakeFiles/cuKan.dir/main.cpp.o"
+  "output": "src/CMakeFiles/kan_app.dir/main.cpp.o"
 },
 {
   "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/src",
-  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -std=gnu++17 -o CMakeFiles/cuKan.dir/grid.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp",
-  "file": "/home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp",
-  "output": "src/CMakeFiles/cuKan.dir/grid.cpp.o"
-},
-{
-  "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/tests",
-  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/include -I/home/sebas/Desktop/ie_dev/cuKan/src -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=gnu++17 -o CMakeFiles/test_grid.dir/test_grid.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/tests/test_grid.cpp",
-  "file": "/home/sebas/Desktop/ie_dev/cuKan/tests/test_grid.cpp",
-  "output": "tests/CMakeFiles/test_grid.dir/test_grid.cpp.o"
-},
-{
-  "directory": "/home/sebas/Desktop/ie_dev/cuKan/build/tests",
-  "command": "/usr/bin/g++-14  -I/home/sebas/Desktop/ie_dev/cuKan/include -I/home/sebas/Desktop/ie_dev/cuKan/src -I/home/sebas/Desktop/ie_dev/cuKan/build/_deps/eigen-src -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest/include -isystem /home/sebas/Desktop/ie_dev/cuKan/build/_deps/googletest-src/googletest -std=gnu++17 -o CMakeFiles/test_grid.dir/__/src/grid.cpp.o -c /home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp",
-  "file": "/home/sebas/Desktop/ie_dev/cuKan/src/grid.cpp",
-  "output": "tests/CMakeFiles/test_grid.dir/__/src/grid.cpp.o"
+  "command": "/usr/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/kan_app.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -rdc=true -c /home/sebas/Desktop/ie_dev/cuKan/src/kernels/cuda/bspline_forward.cu -o CMakeFiles/kan_app.dir/kernels/cuda/bspline_forward.cu.o",
+  "file": "/home/sebas/Desktop/ie_dev/cuKan/src/kernels/cuda/bspline_forward.cu",
+  "output": "src/CMakeFiles/kan_app.dir/kernels/cuda/bspline_forward.cu.o"
 }
 ]
