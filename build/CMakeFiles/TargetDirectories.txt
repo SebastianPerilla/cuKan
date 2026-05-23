@@ -1,7 +1,0 @@
-/home/sebas/Desktop/ie_dev/cuKan/build/CMakeFiles/test.dir
-/home/sebas/Desktop/ie_dev/cuKan/build/CMakeFiles/edit_cache.dir
-/home/sebas/Desktop/ie_dev/cuKan/build/CMakeFiles/rebuild_cache.dir
-/home/sebas/Desktop/ie_dev/cuKan/build/src/CMakeFiles/kan_app.dir
-/home/sebas/Desktop/ie_dev/cuKan/build/src/CMakeFiles/test.dir
-/home/sebas/Desktop/ie_dev/cuKan/build/src/CMakeFiles/edit_cache.dir
-/home/sebas/Desktop/ie_dev/cuKan/build/src/CMakeFiles/rebuild_cache.dir

@@ -16,6 +16,12 @@ set(CMAKE_CUDA_ARCHITECTURES 86)
 
 include(FetchContent)
 
+find_package(Torch REQUIRED)
+
+target_link_libraries(main "${TORCH_LIBRARIES}")
+
+set_property(TARGET main PROPERTY CXX_STANDARD 17)
+
 # GTEST
 FetchContent_Declare(
   googletest
