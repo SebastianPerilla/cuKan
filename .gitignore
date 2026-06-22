@@ -6,3 +6,14 @@ libtorch/
 
 # Any Zip File
 *.zip
+
+
+libtorch-shared-with-deps-latest.zip
+
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+.git
+
+

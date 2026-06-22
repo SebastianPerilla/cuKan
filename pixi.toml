@@ -1,0 +1,26 @@
+[workspace]
+name = "cukan"
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["linux-64"]
+
+[system-requirements]
+cuda = "12"
+
+[dependencies]
+cmake = "*"
+ninja = "*"
+python = "3.12.*"
+pybind11 = "*"
+pytest = "*"
+gtest = "*"
+pytorch-gpu = "*"
+cuda-version = "12.6.*"
+cuda-toolkit = "12.6.*"   # 1. Installs cuda_runtime.h and all development SDKs
+cxx-compiler = "*"        # 2. Installs a matched, safe host GCC compiler
+
+[tasks]
+# 3. Clean and standard configuration command (No brittle -D_Float flags needed!)
+configure = { cmd = "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$CONDA_PREFIX -DCMAKE_EXPORT_COMPILE_COMMANDS=ON" }
+build = { cmd = "cmake --build build", depends-on = ["configure"] }
+test = { cmd = "ctest --test-dir build --output-on-failure", depends-on = ["build"] }
+python-test = { cmd = "python tests/test_forward.py"}
