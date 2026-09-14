@@ -6,7 +6,7 @@ setup(
     ext_modules=[
         CUDAExtension(
             name="kan_cuda_backend",
-            sources=["csrc/kan_cuda.cpp"],
+            sources=["csrc/kan_cuda.cpp", "csrc/kan_cuda_kernel.cu"],
         )
     ],
     cmdclass={"build_ext": BuildExtension},
