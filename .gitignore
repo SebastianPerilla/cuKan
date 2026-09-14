@@ -12,6 +12,7 @@ libtorch/
 # LLM & Sprint Steering Files (Keep local only)
 KAN_CUDA_PLAN.md
 KAN_CUDA_BLUEPRINT.md
+TRITON_KAN_PARITY_PLAN.md
 CLAUDE.md
 *.prompt
 .claude/

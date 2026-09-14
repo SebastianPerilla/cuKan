@@ -1,18 +1,19 @@
 # cuKan
 
-A custom CUDA/PyTorch C++ extension implementing the spline evaluation core of
-Kolmogorov-Arnold Networks (KAN). It replaces the per-edge B-spline evaluation
-in `pykan` with a fused CUDA kernel driven by a localized matrix formulation,
-yielding a measured **291.9x** forward+backward speedup over the reference
-`pykan` implementation.
+A custom CUDA/PyTorch C++ extension implementing pykan's KAN layer activation
+— `scale_base·silu(x) + scale_sp·spline(x)` — as a fused CUDA kernel. It
+replaces the per-edge B-spline evaluation in `pykan` with a localized matrix
+formulation, yielding a measured **199.1x** forward+backward speedup over the
+reference `pykan` implementation.
 
 ## Overview
 
 A KAN layer replaces the fixed activation + linear weight of an MLP with a
 learnable univariate spline on every edge of the computation graph. For a
 layer mapping `D_in` inputs to `D_out` outputs, each `(d_in, d_out)` edge
-carries an independent cubic B-spline over a uniform grid, and the layer
-output is the sum of these spline evaluations across the input dimension.
+carries an independent cubic B-spline over a uniform grid *plus* a SiLU
+residual term, each with its own learnable scale — pykan's actual
+parameterization — and the layer output sums this over the input dimension.
 
 This project reimplements that evaluation as a single dense CUDA kernel: for
 every scalar input, only the four B-spline control points local to that
@@ -48,30 +49,41 @@ spline(x) = (U · M) · C[i : i+4]
 
 `U · M` is the closed-form uniform cubic B-spline basis — computed directly
 in-kernel from powers of `u` rather than an explicit matrix-vector multiply.
-The full layer output sums this over the input dimension:
+The full layer activation, matching pykan's `KANLayer` exactly, adds a SiLU
+residual with its own learnable scale alongside the spline term:
 
 ```
-Y[n, d_out] = Σ_{d_in} spline(x[n, d_in]; C[d_in, d_out, :])
+silu(x) = x * sigmoid(x)
+
+Y[n, d_out] = Σ_{d_in}  scale_base[d_in,d_out]·silu(x[n,d_in])
+                       + scale_sp[d_in,d_out]·spline(x[n,d_in]; C[d_in,d_out,:])
 ```
+
+Three learnable tensors per layer: `C (D_in,D_out,G+3)`, `scale_base
+(D_in,D_out)`, `scale_sp (D_in,D_out)`.
 
 **Forward kernel.** A 2D thread grid covers `(D_out, N)`; each thread loops
-over `D_in`, resolving the local interval and blend weights once per input
-and accumulating into a single output scalar.
+over `D_in`, resolving the local interval, blend weights, and SiLU value once
+per input and accumulating into a single output scalar.
 
 **Backward kernel.** Gradients are analytical, not autodiff-traced through
-the blend weights:
+the blend weights or SiLU:
 
 ```
 dU/du = [0, 1, 2u, 3u^2]        du/dx = 1 / Δx
+d(silu)/dx = sigmoid(x) · (1 + x·(1 - sigmoid(x)))
 
-dY/dx[n, d_in]      = Σ_{d_out} grad_out[n, d_out] · ((dU/du · M) · C[i:i+4]) / Δx
-dY/dC[d_in, d_out, i:i+4] = Σ_n grad_out[n, d_out] · (U · M)
+dY/dx[n, d_in] = Σ_{d_out} grad_out[n, d_out] · ( scale_base·d(silu)/dx
+                                                 + scale_sp·((dU/du · M) · C[i:i+4]) / Δx )
+dY/dC[d_in, d_out, i:i+4]        = Σ_n grad_out[n, d_out] · scale_sp[d_in,d_out] · (U · M)
+dY/d(scale_base)[d_in, d_out]    = Σ_n grad_out[n, d_out] · silu(x[n,d_in])
+dY/d(scale_sp)[d_in, d_out]      = Σ_n grad_out[n, d_out] · spline(x[n,d_in]; C[d_in,d_out,:])
 ```
 
 Since multiple batch elements can land in the same grid interval for a given
-edge, gradient contributions to `C` are accumulated with `atomicAdd`. The
-`x`-gradient has no such collision (one thread owns each `(n, d_in)` output)
-and is written directly.
+edge, gradient contributions to `C`, `scale_base`, and `scale_sp` are all
+accumulated with `atomicAdd`. The `x`-gradient has no such collision (one
+thread owns each `(n, d_in)` output) and is written directly.
 
 Both kernels are exposed through a `torch::autograd::Function`
 (`KanSplineFunction`) registered in `csrc/kan_cuda.cpp`, so `kan_forward` is
@@ -124,8 +136,8 @@ pass, `N = 8192`, `D_in = 32`, `D_out = 32`, `G = 10` grid intervals:
 
 | Implementation       | Total Time (fwd + bwd) | Speedup |
 |-----------------------|------------------------:|--------:|
-| `pykan.KAN`            |               605.23 ms |      1x |
-| `KANCUDALayer` (cuKan) |                 2.07 ms | **291.9x** |
+| `pykan.KAN`            |               573.35 ms |      1x |
+| `KANCUDALayer` (cuKan) |                 2.88 ms | **199.1x** |
 
 This exceeds the project's 10x-30x target range. The gap is largely
 architectural: `pykan` evaluates the full dense B-spline basis per edge
@@ -155,20 +167,20 @@ Measured on an NVIDIA GeForce RTX 3070 Laptop GPU:
 
 | Epoch | Time  | Loss   |
 |-------|------:|-------:|
-| 1     | 3.89s | 0.395  |
-| 2     | 3.77s | 0.100  |
-| 3     | 3.72s | 0.126  |
+| 1     | 3.69s | 0.266  |
+| 2     | 3.62s | 0.106  |
+| 3     | 3.62s | 0.069  |
 
-Total training time: **11.38s**. Final test-set accuracy: **94.06%**.
+Total training time: **10.93s**. Final test-set accuracy: **95.97%**.
 
 **1-epoch head-to-head vs. `pykan.KAN` (5,000-sample subset, batch 256):**
 
 | Implementation         | Time (1 epoch) | Speedup |
 |-------------------------|---------------:|--------:|
-| `pykan.KAN`              |       479.81s |      1x |
-| `KANCUDALayer` (cuKan)   |         0.50s | **962.3x** |
+| `pykan.KAN`              |       444.63s |      1x |
+| `KANCUDALayer` (cuKan)   |         0.50s | **890.8x** |
 
-pykan takes roughly 8 minutes to complete a single epoch over 5,000 MNIST
+pykan takes roughly 7-8 minutes to complete a single epoch over 5,000 MNIST
 samples at this width; cuKan completes the same epoch in half a second,
 and trains the full 60,000-sample dataset for 3 epochs in the time pykan
 needs for a few dozen mini-batches.
