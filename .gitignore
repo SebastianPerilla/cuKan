@@ -40,3 +40,6 @@ __pycache__/
 .vscode/
 .idea/
 *.swp
+
+# pykan checkpoint output from benchmark runs
+model/
