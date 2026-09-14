@@ -257,13 +257,8 @@ implementation:
   an actual `pykan.KANLayer`, saves its forward and gradient output on
   fixed inputs, and asserts our kernel matches it to `1e-5`.
 
-Explicitly not planned unless priorities change: a Triton port (this
-project is intentionally raw CUDA/C++), genuine SRAM/shared-memory tiling
+Explicitly not planned unless priorities change: Genuine SRAM/shared-memory tiling
 (the current bottleneck is kernel-launch/dispatch overhead, not memory
 bandwidth, so tiling wouldn't move the needle at current problem sizes),
 roofline/hardware-utilization profiling, mixed-precision (FP16/BF16)
 support, or a CPU fallback backend.
-
-A detailed, phase-by-phase tracking document for this roadmap is kept
-locally (gitignored, not published) so it can be picked back up across
-sessions.
