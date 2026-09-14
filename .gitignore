@@ -43,3 +43,6 @@ __pycache__/
 
 # pykan checkpoint output from benchmark runs
 model/
+
+# Downloaded datasets
+data/

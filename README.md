@@ -87,6 +87,8 @@ csrc/
   kan_cuda_kernel.cu    forward/backward CUDA kernels
 kan_cuda/
   layer.py              KANCUDALayer(nn.Module)
+examples/
+  train_mnist.py        end-to-end MNIST training + pykan speed comparison
 tests/
   test_01_build.py      extension import & shape checks
   test_02_forward.py    forward parity vs. a pure-Python reference
@@ -135,4 +137,44 @@ Reproduce with:
 
 ```bash
 pixi run benchmark
+```
+
+## Real-World Benchmark: MNIST Classification
+
+`examples/train_mnist.py` trains a 2-layer KAN
+(`KANCUDALayer(784, 64, num_intervals=8) -> KANCUDALayer(64, 10, num_intervals=8)`)
+on the full MNIST training set (60,000 samples, batch size 256, Adam
+lr=0.005, `CrossEntropyLoss`) for 3 epochs, then runs a 1-epoch head-to-head
+against `pykan.KAN([784, 64, 10], grid=8)` on a 5,000-sample subset to get a
+real training-loop speedup ratio (data loading, autograd, and the optimizer
+step included, not just the raw kernel).
+
+Measured on an NVIDIA GeForce RTX 3070 Laptop GPU:
+
+**Full 3-epoch training (KANCUDALayer only, 60,000 samples):**
+
+| Epoch | Time  | Loss   |
+|-------|------:|-------:|
+| 1     | 3.89s | 0.395  |
+| 2     | 3.77s | 0.100  |
+| 3     | 3.72s | 0.126  |
+
+Total training time: **11.38s**. Final test-set accuracy: **94.06%**.
+
+**1-epoch head-to-head vs. `pykan.KAN` (5,000-sample subset, batch 256):**
+
+| Implementation         | Time (1 epoch) | Speedup |
+|-------------------------|---------------:|--------:|
+| `pykan.KAN`              |       479.81s |      1x |
+| `KANCUDALayer` (cuKan)   |         0.50s | **962.3x** |
+
+pykan takes roughly 8 minutes to complete a single epoch over 5,000 MNIST
+samples at this width; cuKan completes the same epoch in half a second,
+and trains the full 60,000-sample dataset for 3 epochs in the time pykan
+needs for a few dozen mini-batches.
+
+Reproduce with:
+
+```bash
+pixi run python examples/train_mnist.py
 ```

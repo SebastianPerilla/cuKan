@@ -16,7 +16,10 @@ class KANCUDALayer(nn.Module):
         self.grid_max = grid_max
 
         n_coef = num_intervals + 3
-        self.coef = nn.Parameter(torch.randn(in_dim, out_dim, n_coef) * 0.5)
+        # Scale by 1/sqrt(in_dim): layer output sums one spline term per input
+        # dimension, so unscaled init blows up for wide layers (e.g. in_dim=784).
+        init_std = 0.1 / (in_dim ** 0.5)
+        self.coef = nn.Parameter(torch.randn(in_dim, out_dim, n_coef) * init_std)
 
     def forward(self, x):
         x = x.contiguous().float()
