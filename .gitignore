@@ -7,13 +7,36 @@ libtorch/
 # Any Zip File
 *.zip
 
-
-libtorch-shared-with-deps-latest.zip
-
-# pixi environments
-.pixi/*
-!.pixi/config.toml
-
 .git
 
+# LLM & Sprint Steering Files (Keep local only)
+KAN_CUDA_PLAN.md
+KAN_CUDA_BLUEPRINT.md
+CLAUDE.md
+*.prompt
+.claude/
+.anthropic/
+.gemini/
 
+# Build artifacts & compiled binaries
+build/
+dist/
+*.egg-info/
+*.so
+*.o
+*.a
+*.obj
+*.out
+
+# Pixi & Virtual Environments
+.pixi/
+!.pixi/config.toml
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp

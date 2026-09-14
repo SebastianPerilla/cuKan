@@ -1,26 +1,33 @@
 [workspace]
-name = "cukan"
-channels = ["https://prefix.dev/conda-forge"]
+name = "kan-cuda-sprint"
+version = "0.1.0"
+description = "high-performance c++/cuda kan implementation with pytorch & pixi"
+authors = ["sebastian perilla"]
+channels = ["conda-forge"]
 platforms = ["linux-64"]
 
 [system-requirements]
-cuda = "12"
+cuda = "12.1"
 
 [dependencies]
-cmake = "*"
+python = "3.11.*"
+pytorch-gpu = ">=2.2.0"
+cuda-version = "12.1.*"
+cuda-toolkit = "12.1.*"
+cuda-nvcc = "12.1.*"
+gcc_linux-64 = "11.*"
+gxx_linux-64 = "11.*"
+cmake = ">=3.26"
 ninja = "*"
-python = "3.12.*"
 pybind11 = "*"
 pytest = "*"
-gtest = "*"
-pytorch-gpu = "*"
-cuda-version = "12.6.*"
-cuda-toolkit = "12.6.*"   # 1. Installs cuda_runtime.h and all development SDKs
-cxx-compiler = "*"        # 2. Installs a matched, safe host GCC compiler
+matplotlib = "*"
+numpy = "<2.0"
+
+[pypi-dependencies]
+pykan = "*"
 
 [tasks]
-# 3. Clean and standard configuration command (No brittle -D_Float flags needed!)
-configure = { cmd = "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$CONDA_PREFIX -DCMAKE_EXPORT_COMPILE_COMMANDS=ON" }
-build = { cmd = "cmake --build build", depends-on = ["configure"] }
-test = { cmd = "ctest --test-dir build --output-on-failure", depends-on = ["build"] }
-python-test = { cmd = "python tests/test_forward.py"}
+build = "python setup.py build_ext --inplace"
+test = "pytest tests/"
+benchmark = "python tests/test_05_benchmark.py"
