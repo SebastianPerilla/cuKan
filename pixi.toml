@@ -1,0 +1,40 @@
+[workspace]
+name = "kan-cuda-sprint"
+version = "0.1.0"
+description = "high-performance c++/cuda kan implementation with pytorch & pixi"
+authors = ["sebastian perilla"]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[system-requirements]
+cuda = "12.1"
+
+[dependencies]
+python = "3.11.*"
+pytorch-gpu = ">=2.2.0"
+torchvision = "*"
+cuda-version = "12.1.*"
+cuda-toolkit = "12.1.*"
+cuda-nvcc = "12.1.*"
+gcc_linux-64 = "11.*"
+gxx_linux-64 = "11.*"
+cmake = ">=3.26"
+ninja = "*"
+pybind11 = "*"
+pytest = "*"
+setuptools = "*"
+matplotlib = "*"
+numpy = "<2.0"
+scikit-learn = "*"
+pyyaml = "*"
+pandas = "*"
+sympy = "*"
+tqdm = "*"
+
+[pypi-dependencies]
+pykan = "*"
+
+[tasks]
+build = "python setup.py build_ext --inplace"
+test = "pytest tests/"
+benchmark = "python tests/test_05_benchmark.py"
